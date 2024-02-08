@@ -82,8 +82,8 @@ chmod +x /home/sol/bin/validator.sh
 Add config for validator.sh depending on server network:
 
 exec solana-validator \
-    --identity validator-keypair.json \
-    --vote-account vote-account-keypair.json \
+    --identity /home/sol/validator-keypair.json \
+    --vote-account /home/sol/vote-account-keypair.json \
     --log /home/sol/solana-validator.log \
     --ledger /mnt/ledger \
     --accounts /mnt/solana-accounts \
