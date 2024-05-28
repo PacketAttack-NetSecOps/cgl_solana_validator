@@ -30,27 +30,27 @@ sudo mkdir -p /mnt/ledger
 sudo chown -R sol:sol /mnt/ledger
 sudo mount /dev/nvme1n1 /mnt/ledger
 
-add the new drive to fstab so that it mounts after reboot:
+### add the new drive to fstab so that it mounts after reboot:
 sudo vi /etc/fstab
 add: /dev/nvme1n1 /mnt/ledger ext4 rw,relatime 0 0
 
-Optimize sysctl knobs:
-
+### Optimize sysctl knobs:
 sudo bash -c "cat >/etc/sysctl.d/21-solana-validator.conf <<EOF
-# Increase UDP buffer sizes
+
+### Increase UDP buffer sizes
 net.core.rmem_default = 134217728
 net.core.rmem_max = 134217728
 net.core.wmem_default = 134217728
 net.core.wmem_max = 134217728
 
-# Increase memory mapped files limit
+### Increase memory mapped files limit
 vm.max_map_count = 1000000
 
-# Increase number of allowed open file descriptors
+### Increase number of allowed open file descriptors
 fs.nr_open = 1000000
 EOF"
 
-Confirm sysctl knobs:
+### Confirm sysctl knobs:
 sudo sysctl -p /etc/sysctl.d/21-solana-validator.conf
 
 Add DefaultLimitNOFILE=1000000 to system.conf:
