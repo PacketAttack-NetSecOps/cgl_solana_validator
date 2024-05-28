@@ -1,6 +1,6 @@
-#Validator setup guide as of 2/7/2024
+##Validator setup guide as of 2/7/2024
 
-#Reference Solana setup guide: https://docs.solanalabs.com/operations/setup-a-validator
+##Reference Solana setup guide: https://docs.solanalabs.com/operations/setup-a-validator
 
 OS: Ubunut 22.04
 2 disks:
