@@ -5,7 +5,7 @@ https://docs.solanalabs.com/operations/setup-a-validator
 
 ### Hardware
 OS: Ubunut 22.04
-2 disks:
+Disks (2):
 nvme0n1 - OS disk should be atleast 500GB (can be SATA)
 nvme1n1 - Ledger disk should be atleast 2TB (must be NVME)
 
