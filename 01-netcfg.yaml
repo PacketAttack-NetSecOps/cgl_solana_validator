@@ -1,0 +1,21 @@
+network:
+    version: 2
+    renderer: networkd
+    ethernets:
+        enp11s0f0:
+            addresses:
+                - 38.xxx.xxx.xxx/29
+            nameservers:
+                addresses: [8.8.8.8, 8.8.4.4]
+            routes:
+                - to: default
+                  via: 38.xxx.xxx.xxx
+
+        enp11s0f1:
+            addresses:
+                - 10.xxx.xxx.xxx/24
+            nameservers:
+                addresses: [10.xxx.xxx.xxx]
+            routes:
+                - to: 10.xxx.xxx.xxx/16
+                  via: 10.xxx.xxx.xxx
