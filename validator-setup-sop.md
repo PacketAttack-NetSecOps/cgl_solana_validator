@@ -9,8 +9,8 @@ Disks (2):
 nvme0n1 - OS disk should be atleast 500GB (can be SATA)
 nvme1n1 - Ledger disk should be atleast 2TB (must be NVME)
 
-### set static IPs on NICs
-All nodes should be setup with dual NICs, one to be used for management and the other to be used for blockchain transfer
+### Set static IPs on NICs - Set routes
+All nodes should be setup with dual NICs, one to be used for management with a manual route and the other to be used for default internet route
 Use netplan:
 vi /etc/netplan/01-netcfg.yaml
 
