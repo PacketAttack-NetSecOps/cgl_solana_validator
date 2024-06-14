@@ -125,9 +125,9 @@ ExecStart=/bin/bash /home/sol/bin/validator.sh
 [Install]
 WantedBy=multi-user.target
 
-Setup log rotate:
-# Setup log rotation
 
+### Setup log rotation
+```
 cat > logrotate.sol <<EOF
 /home/sol/solana-validator.log {
   rotate 7
@@ -138,6 +138,8 @@ cat > logrotate.sol <<EOF
   endscript
 }
 EOF
+```
+
 sudo cp logrotate.sol /etc/logrotate.d/sol
 sudo systemctl restart logrotate.service
 
