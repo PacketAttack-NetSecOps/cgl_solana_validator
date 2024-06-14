@@ -140,8 +140,12 @@ cat > logrotate.sol <<EOF
 EOF
 ```
 
+```
 sudo cp logrotate.sol /etc/logrotate.d/sol
+```
+```
 sudo systemctl restart logrotate.service
+```
 
 Setup ram disk:
 sudo mkdir /mnt/solana-accounts
