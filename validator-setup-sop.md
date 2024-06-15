@@ -3,7 +3,7 @@
 ### Reference Solana setup guide: 
 https://docs.solanalabs.com/operations/setup-a-validator
 
-### Hardware & OS
+## Hardware & OS
 #### OS: Ubuntu 20.04
 #### Disks (2):
 #### nvme0n1 - OS disk should be atleast 500GB (can be SATA)
