@@ -1,4 +1,4 @@
-# Validator setup guide as of 2/7/2024:
+# Validator setup guide as of 6/15/2024:
 
 ### Reference Solana setup guide: 
 https://docs.solanalabs.com/operations/setup-a-validator
@@ -11,13 +11,15 @@ nvme1n1 - Ledger disk should be atleast 2TB (must be NVME)
 
 ### Set static IPs on NICs - Set routes
 All nodes should be setup with dual NICs, one to be used for management with a manual route and the other to be used for default internet route
-Use netplan yaml file:
+Use netplan yaml file, refrence 01/netcfg.yaml example script in repo.
+
+```
 sudo vi /etc/netplan/01-netcfg.yaml
-See 01/netcfg.yaml example script in repo.
-
+```
 Apply the config changes
+```
 sudo netplan apply
-
+```
 ### Run Updates:
 sudo apt update
 sudo apt upgrade
