@@ -35,7 +35,7 @@ sudo apt upgrade
 sudo adduser sol
 ```
 
-### hard drive prep:
+### Prep NVME storage
 check partition layout:
 ```
 df -h
