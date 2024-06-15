@@ -4,8 +4,8 @@
 https://docs.solanalabs.com/operations/setup-a-validator
 
 ## Hardware & OS
-##### OS: Ubuntu 20.04
-##### Motherboard: GIGABYTE TRX50 AERO D
+OS: Ubuntu 20.04;
+Motherboard: GIGABYTE TRX50 AERO D;
 ##### CPU: Threadripper 7960X 24C 48T 5.3GHz
 ##### Memory: 256GB - Standardizing on DDR5 M321R8GA0BB0-CQK 64GB modules
 ##### DISK1 nvme0n1 - OS disk 1TB - Used for validator logs (NVME)
