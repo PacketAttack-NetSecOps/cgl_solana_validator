@@ -11,7 +11,7 @@ nvme1n1 - Ledger disk should be atleast 2TB (must be NVME)
 
 ### Set static IPs on NICs - Set routes
 All nodes should be setup with dual NICs, one to be used for management with a manual route and the other to be used for default internet route
-Use netplan yaml file, refrence 01/netcfg.yaml example script in repo.
+Use netplan yaml file, refrence 01-netcfg.yaml example script in repo.
 
 ```
 sudo vi /etc/netplan/01-netcfg.yaml
@@ -21,19 +21,24 @@ Apply the config changes
 sudo netplan apply
 ```
 ### Run Updates:
+```
 sudo apt update
 sudo apt upgrade
-
+```
 ### Add sol user:
+```
 sudo adduser sol
+```
 
 ### hard drive setup:
+```
 check partition layout:
 df -h
-
+```
 ### check block devices:
+```
 lsblk -f
-
+```
 ### format 2nd disk for ledger:
 sudo mkfs -t ext4 /dev/nvme1n1
 
