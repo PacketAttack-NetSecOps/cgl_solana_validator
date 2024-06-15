@@ -9,7 +9,7 @@ Disks (2):
 nvme0n1 - OS disk should be atleast 500GB (can be SATA)
 nvme1n1 - Ledger disk should be atleast 2TB (must be NVME)
 
-### Set static IPs on NICs - Set routes
+### Set static IPs on NICs - Set Routes using netplan
 All nodes should be setup with dual NICs, one to be used for management with a manual route and the other to be used for default internet route
 Use netplan yaml file, refrence 01-netcfg.yaml example script in repo.
 
@@ -20,28 +20,34 @@ Apply the config changes
 ```
 sudo netplan apply
 ```
-### Run Updates:
+
+### Update Ubuntu System
+
+Run Updates:
 ```
 sudo apt update
 sudo apt upgrade
 ```
-### Add sol user:
+
+
+### Add sol user - This user will run solana CLI software
 ```
 sudo adduser sol
 ```
 
-### hard drive setup:
-```
+### hard drive prep:
 check partition layout:
+```
 df -h
 ```
-### check block devices:
+check block devices:
 ```
 lsblk -f
 ```
-### format 2nd disk for ledger:
+format 2nd disk for ledger:
+```
 sudo mkfs -t ext4 /dev/nvme1n1
-
+```
 ### create the ledger directory, change ownership, mount the drive:
 sudo mkdir -p /mnt/ledger
 sudo chown -R sol:sol /mnt/ledger
