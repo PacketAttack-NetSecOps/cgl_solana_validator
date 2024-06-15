@@ -2,7 +2,7 @@ network:
     version: 2
     renderer: networkd
     ethernets:
-        enp11s0f0:
+        enp11s0f0:  <--------WAN INTERFACE
             addresses:
                 - 38.xxx.xxx.xxx/29
             nameservers:
@@ -11,11 +11,11 @@ network:
                 - to: default
                   via: 38.xxx.xxx.xxx
 
-        enp11s0f1:
+        enp11s0f1: <-------- LAN INTERFACE
             addresses:
                 - 10.xxx.xxx.xxx/24
             nameservers:
                 addresses: [10.xxx.xxx.xxx]
             routes:
-                - to: 10.xxx.xxx.xxx/16
-                  via: 10.xxx.xxx.xxx
+                - to: 10.xxx.xxx.xxx/8 <-------- Inside management network
+                  via: 10.xxx.xxx.xxx <--------- LAN Interface Gateway
