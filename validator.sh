@@ -1,6 +1,4 @@
-production mainnet-beta validator.sh file
-
-solnode03
+Example of production mainnet-beta validator.sh file
 
 exec solana-validator \
     --identity /home/sol/validator-keypair.json \
