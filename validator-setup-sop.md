@@ -18,6 +18,10 @@ Use netplan yaml file, refrence 01-netcfg.yaml example script in repo.
 ```
 sudo vi /etc/netplan/01-netcfg.yaml
 ```
+Set permissions on the netplan file
+```
+sudo chmod 600 /etc/netplan/01-netcfg.yaml
+```
 Apply the config changes
 ```
 sudo netplan apply
