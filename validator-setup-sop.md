@@ -191,12 +191,10 @@ Setup ram disk:
 sudo mkdir /mnt/solana-accounts
 ```
 
+add to fstab:
 ```
-sudo vi /etc/fstab
-```
-add to the bottom: 
-```
-tmpfs /mnt/solana-accounts tmpfs rw,size=300G,user=sol 0 0
+echo 'tmpfs /mnt/solana-accounts tmpfs rw,noexec,nodev,nosuid,noatime,size=64G,user=sol 0 0' | \
+  sudo tee --append /etc/fstab > /dev/null
 ```
 
 setup 250GB swap file for tmpfs spillover:
