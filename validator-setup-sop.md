@@ -144,6 +144,8 @@ Log back into the server sudo user. Create a system service to run the validator
 sudo vi /etc/systemd/system/sol.service
 ```
 
+Add the following:
+```
 [Unit]
 Description=Solana Validator
 After=network.target
@@ -161,7 +163,7 @@ ExecStart=/bin/bash /home/sol/bin/validator.sh
 
 [Install]
 WantedBy=multi-user.target
-
+```
 
 ### Setup log rotation
 ```
@@ -185,31 +187,53 @@ sudo systemctl restart logrotate.service
 ```
 
 Setup ram disk:
+```
 sudo mkdir /mnt/solana-accounts
+```
 
+```
 sudo vi /etc/fstab
-add to the bottom: "tmpfs /mnt/solana-accounts tmpfs rw,size=300G,user=sol 0 0"
+```
+add to the bottom: 
+```
+"tmpfs /mnt/solana-accounts tmpfs rw,size=300G,user=sol 0 0"
+```
 
 setup 250GB swap file for tmpfs spillover:
+```
 sudo dd if=/dev/zero of=/swapfile bs=1MiB count=250KiB
-
+```
 set permissions: 
+```
 sudo chmod 0600 /swapfile
-
+```
+```
 sudo mkswap /swapfile
-
+```
 update fstab:
+```
 vi /etc/fstab
+```
+```
 /swapfile swap swap defaults 0 0
+```
 
 Enable swap
+```
 sudo swapon -a
+```
+```
 sudo mount /mnt/solana-accounts/
-
+```
 Confirm swap is active with free -g and the tmpfs is mounted with mount
 
 Start the validator service:
+```
 sudo systemctl enable --now sol
+```
 
 Check Log:
+```
 tail -f solana-validator.log
+```
+
