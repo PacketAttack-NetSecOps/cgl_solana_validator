@@ -196,7 +196,7 @@ sudo vi /etc/fstab
 ```
 add to the bottom: 
 ```
-"tmpfs /mnt/solana-accounts tmpfs rw,size=300G,user=sol 0 0"
+tmpfs /mnt/solana-accounts tmpfs rw,size=300G,user=sol 0 0
 ```
 
 setup 250GB swap file for tmpfs spillover:
