@@ -31,7 +31,7 @@ Modify the following configuration file
 ```
 sudo vi /etc/ssh/sshd_config
 ```
-Find at the top section #ListenAddress 0.0.0.0 , remove the # and add the inside management IP address.
+Find at the top section #ListenAddress 0.0.0.0 remove the # and add the inside management IP address.
 
 ### Update Ubuntu System
 
@@ -110,15 +110,18 @@ sudo bash -c "cat >/etc/security/limits.d/90-solana-nofiles.conf <<EOF
 EOF"
 ```
 
-### Close all open sessions (log out ) ###
+### Reboot the server
 
-Log in as the sol user
+Log in as the new sol user
 
-Instal Solana CLI - Use current build for testnet or mainnet-beta:
+Install Solana CLI - Use current build for testnet or mainnet-beta:
+```
 sh -c "$(curl -sSfL https://release.solana.com/v1.17.20/install)"
-
-check version:
+```
+Verify the new installed version:
+```
 solana --version
+```
 
 Create directory and file for validator config file:
 mkdir -p /home/sol/bin
