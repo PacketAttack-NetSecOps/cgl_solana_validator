@@ -88,19 +88,27 @@ EOF"
 ```
 
 ### Confirm sysctl knobs:
+```
 sudo sysctl -p /etc/sysctl.d/21-solana-validator.conf
+```
 
 ### Set DefaultLimitNOFILE=1000000
+```
 sudo vi /etc/systemd/system.conf
+```
 remove # from DefaultLimitNOFILE and set to 1000000
 
 ### reload systemctl daemon
+```
 sudo systemctl daemon-reload
+```
 
 ### Increase process file descriptor count limit
+```
 sudo bash -c "cat >/etc/security/limits.d/90-solana-nofiles.conf <<EOF
 * - nofile 1000000
 EOF"
+```
 
 ### Close all open sessions (log out ) ###
 
