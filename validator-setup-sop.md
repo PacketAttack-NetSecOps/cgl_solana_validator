@@ -116,7 +116,7 @@ Log in as the new sol user
 
 Install Solana CLI - Use current build for testnet or mainnet-beta:
 ```
-sh -c "$(curl -sSfL https://release.solana.com/v1.17.20/install)"
+sh -c "$(curl -sSfL https://release.solana.com/v1.18.15/install)"
 ```
 Verify the new installed version:
 ```
