@@ -124,9 +124,15 @@ solana --version
 ```
 
 Create directory and file for validator config file:
+```
 mkdir -p /home/sol/bin
+```
+```
 touch /home/sol/bin/validator.sh
+```
+```
 chmod +x /home/sol/bin/validator.sh
+```
 
 Add config for validator.sh depending on server network:
 
