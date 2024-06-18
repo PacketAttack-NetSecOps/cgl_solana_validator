@@ -41,7 +41,6 @@ sudo apt update
 sudo apt upgrade
 ```
 
-
 ### Add sol user - This user will run solana CLI software
 ```
 sudo adduser sol
@@ -60,16 +59,21 @@ format 2nd disk for ledger:
 ```
 sudo mkfs -t ext4 /dev/nvme1n1
 ```
-### create the ledger directory, change ownership, mount the drive:
+### Create the ledger directory, change ownership, mount the drive:
+```
 sudo mkdir -p /mnt/ledger
 sudo chown -R sol:sol /mnt/ledger
 sudo mount /dev/nvme1n1 /mnt/ledger
+```
 
-### add the new drive to fstab so that it mounts after reboot:
+### Add the new drive to fstab so that it mounts after reboot:
+```
 sudo vi /etc/fstab
 add: /dev/nvme1n1 /mnt/ledger ext4 rw,relatime 0 0
+```
 
 ### Optimize sysctl knobs:
+```
 sudo bash -c "cat >/etc/sysctl.d/21-solana-validator.conf <<EOF
 net.core.rmem_default = 134217728
 net.core.rmem_max = 134217728
@@ -78,6 +82,7 @@ net.core.wmem_max = 134217728
 vm.max_map_count = 1000000
 fs.nr_open = 1000000
 EOF"
+```
 
 ### Confirm sysctl knobs:
 sudo sysctl -p /etc/sysctl.d/21-solana-validator.conf
