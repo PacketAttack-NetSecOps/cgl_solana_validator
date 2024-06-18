@@ -26,6 +26,12 @@ Apply the config changes
 ```
 sudo netplan apply
 ```
+### Enable SSH only on the Management NIC
+Modify the following configuration file
+```
+sudo vi /etc/ssh/sshd_config
+```
+Find at the top #ListenAddress 0.0.0.0 , remove the # and add the inside management IP address.
 
 ### Update Ubuntu System
 
