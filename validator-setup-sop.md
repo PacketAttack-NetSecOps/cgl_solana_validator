@@ -134,28 +134,15 @@ touch /home/sol/bin/validator.sh
 chmod +x /home/sol/bin/validator.sh
 ```
 
-Add config for validator.sh depending on server network:
+Edit the validator.sh file and add all variables. Reference validator.sh
+```
+vi /home/sol/bin/validator.sh
+```
 
-exec solana-validator \
-    --identity /home/sol/validator-keypair.json \
-    --vote-account /home/sol/vote-account-keypair.json \
-    --log /home/sol/solana-validator.log \
-    --ledger /mnt/ledger \
-    --accounts /mnt/solana-accounts \
-    --rpc-port 8899 \
-    --private-rpc \
-    --dynamic-port-range 8000-8020 \
-    --entrypoint entrypoint.mainnet-beta.solana.com:8001 \
-    --entrypoint entrypoint2.mainnet-beta.solana.com:8001 \
-    --entrypoint entrypoint3.mainnet-beta.solana.com:8001 \
-    --entrypoint entrypoint4.mainnet-beta.solana.com:8001 \
-    --entrypoint entrypoint5.mainnet-beta.solana.com:8001 \
-    --expected-genesis-hash 5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d \
-    --wal-recovery-mode skip_any_corrupted_record \
-    --limit-ledger-size 250000000 
-
-create a system service (do this as sudo admin):
+Log back into the server sudo user. Create a system service to run the validator
+```
 sudo vi /etc/systemd/system/sol.service
+```
 
 [Unit]
 Description=Solana Validator
