@@ -69,7 +69,10 @@ sudo mount /dev/nvme1n1 /mnt/ledger
 ### Add the new drive to fstab so that it mounts after reboot:
 ```
 sudo vi /etc/fstab
-add: /dev/nvme1n1 /mnt/ledger ext4 rw,relatime 0 0
+```
+add the following at the end: 
+```
+/dev/nvme1n1 /mnt/ledger ext4 rw,relatime 0 0
 ```
 
 ### Optimize sysctl knobs:
