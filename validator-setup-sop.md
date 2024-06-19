@@ -186,14 +186,14 @@ sudo cp logrotate.sol /etc/logrotate.d/sol
 sudo systemctl restart logrotate.service
 ```
 
-Setup ram disk:
+Setup 300GB tempfs ram disk:
 ```
 sudo mkdir /mnt/solana-accounts
 ```
 
 add to fstab:
 ```
-echo 'tmpfs /mnt/solana-accounts tmpfs rw,noexec,nodev,nosuid,noatime,size=64G,user=sol 0 0' | \
+echo 'tmpfs /mnt/solana-accounts tmpfs rw,noexec,nodev,nosuid,noatime,size=300G,user=sol 0 0' | \
   sudo tee --append /etc/fstab > /dev/null
 ```
 
@@ -235,3 +235,4 @@ Check Log:
 tail -f solana-validator.log
 ```
 
+This concludes the setup
